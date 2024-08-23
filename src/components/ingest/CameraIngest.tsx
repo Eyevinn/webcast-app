@@ -1,7 +1,7 @@
 'use client';
 
 import { WHIPClient } from '@eyevinn/whip-web-client';
-import { Button, Input, Snippet } from '@nextui-org/react';
+import { Button, Snippet } from '@nextui-org/react';
 import { generateSlug } from 'random-word-slugs';
 import { useRef, useState } from 'react';
 
@@ -13,7 +13,7 @@ type Props = {
 export default function CameraIngest({ whipEndpointUrl, authkey }: Props) {
   const [isBroadcasting, setIsBroadcasting] = useState(false);
   const [client, setClient] = useState<WHIPClient | null>(null);
-  const [channelId, setChannelId] = useState<string>(generateSlug());
+  const [channelId] = useState<string>(generateSlug());
   const [channelUrl, setChannelUrl] = useState<string | null>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
 
