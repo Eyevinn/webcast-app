@@ -7,7 +7,7 @@
   <br />
 
   <br />
-  :book: <b><a href="https://docs.osaas.io/osaas.wiki/Solution%3A-WebRTC-distribution.html">Read the documentation (github pages)</a></b> :eyes:
+  :book: <b><a href="https://docs.osaas.io/osaas.wiki/Solution%3A-WebRTC-distribution.html">WebRTC with Open Source Cloud</a></b> :eyes:
   <br />
 </div>
 
@@ -20,7 +20,7 @@
 
 </div>
 
-This React application demonstrates how to build a webcast application using the protocols WHIP and WHEP for a standardized WebRTC based distribution of the stream. Online [demo](https://webcast.eyevinn.technolgy) is powered by Symphony Media Bridge and [Open Source Cloud](https://docs.osaas.io/osaas.wiki/Solution%3A-WebRTC-distribution.html).
+This React application demonstrates how to build a webcast application using the protocols WHIP and WHEP for a standardized WebRTC based distribution of the stream. Online [demo](https://webcast.eyevinn.technology) is powered by Symphony Media Bridge and [Open Source Cloud](https://docs.osaas.io/osaas.wiki/Solution%3A-WebRTC-distribution.html).
 
 ![Screenshot](./screenshot.png)
 
