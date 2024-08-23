@@ -1,21 +1,18 @@
 <h1 align="center">
-  Project Name or Logo
+  Simple Webcast
 </h1>
 
 <div align="center">
-  project name - quick salespitch why this is awesome. 
+  Simple Webcast - Demo application for WebRTC based distribution with WHIP and WHEP
   <br />
+
   <br />
-  :book: <b><a href="https://eyevinn.github.io/{{repo-name}}/">Read the documentation (github pages)</a></b> :eyes:
+  :book: <b><a href="https://docs.osaas.io/osaas.wiki/Solution%3A-WebRTC-distribution.html">Read the documentation (github pages)</a></b> :eyes:
   <br />
 </div>
 
 <div align="center">
 <br />
-
-[![npm](https://img.shields.io/npm/v/@eyevinn/{{repo-name}}?style=flat-square)](https://www.npmjs.com/package/@eyevinn/{{repo-name}})
-[![github release](https://img.shields.io/github/v/release/Eyevinn/{{repo-name}}?style=flat-square)](https://github.com/Eyevinn/{{repo-name}}/releases)
-[![license](https://img.shields.io/github/license/eyevinn/{{repo-name}}.svg?style=flat-square)](LICENSE)
 
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-ff69b4.svg?style=flat-square)](https://github.com/eyevinn/{{repo-name}}/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22)
 [![made with hearth by Eyevinn](https://img.shields.io/badge/made%20with%20%E2%99%A5%20by-Eyevinn-59cbe8.svg?style=flat-square)](https://github.com/eyevinn)
@@ -23,19 +20,39 @@
 
 </div>
 
-<!-- Add a description of the project here -->
+This React application demonstrates how to build a webcast application using the protocols WHIP and WHEP for a standardized WebRTC based distribution of the stream. Online [demo](https://webcast.eyevinn.technolgy) is powered by Symphony Media Bridge and [Open Source Cloud](https://docs.osaas.io/osaas.wiki/Solution%3A-WebRTC-distribution.html).
+
+![Screenshot](./screenshot.png)
 
 ## Requirements
 
-<!--Add any external project dependencies such as node.js version etc here -->
+- Nodejs 18+
 
 ## Installation / Usage
 
-<!--Add clear instructions on how to use the project here -->
+```
+$ npm install
+```
+
+Build and run
+
+```
+$ npm run build
+$ WHIP_ENDPOINT_URL=<whip-endpoint> \
+  WHIP_API_KEY=<whip-api-key> \
+  WHEP_ENDPOINT_URL=<whep-endpoint> \
+  npm start
+```
 
 ## Development
 
-<!--Add clear instructions on how to start development of the project here -->
+Run development server
+
+```
+$ WHIP_ENDPOINT_URL=<whip-endpoint> WHEP_ENDPOINT_URL=<whep-endpoint> npm run dev
+```
+
+Access website at http://localhost:3000
 
 ## Contributing
 

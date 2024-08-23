@@ -1,7 +1,7 @@
 {
-  "name": "@eyevinn/typescript-nextui",
-  "version": "1.0.0",
-  "description": "The default typescript-nextui template for eyevinn projects",
+  "name": "webcast-app",
+  "version": "0.1.0",
+  "description": "Demo application for WebRTC based distribution with WHIP and WHEP",
   "scripts": {
     "test": "jest",
     "prepare": "husky install",
