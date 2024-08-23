@@ -37,11 +37,11 @@ $ npm install
 Build and run
 
 ```
+$ export NEXT_PUBLIC_WHIP_ENDPOINT_URL=<whip-endpoint>
+$ export NEXT_PUBLIC_WHIP_API_KEY=<whip-api-key>
+$ export NEXT_PUBLIC_WHEP_ENDPOINT_URL=<whep-endpoint>
 $ npm run build
-$ WHIP_ENDPOINT_URL=<whip-endpoint> \
-  WHIP_API_KEY=<whip-api-key> \
-  WHEP_ENDPOINT_URL=<whep-endpoint> \
-  npm start
+$ npm start
 ```
 
 ## Development
@@ -49,7 +49,7 @@ $ WHIP_ENDPOINT_URL=<whip-endpoint> \
 Run development server
 
 ```
-$ WHIP_ENDPOINT_URL=<whip-endpoint> WHEP_ENDPOINT_URL=<whep-endpoint> npm run dev
+$ npm run dev
 ```
 
 Access website at http://localhost:3000

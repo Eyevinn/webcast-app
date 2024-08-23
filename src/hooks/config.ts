@@ -1,24 +1,24 @@
 import { useEffect, useState } from 'react';
-import { ConfigDTO, getConfig } from '../server/actions/config';
+
+export type ConfigDTO = {
+  whipEndpointUrl: string;
+  whipApiKey?: string;
+  whepEndpointUrl: string;
+};
+
+const WHIP_ENDPOINT_URL = process.env.NEXT_PUBLIC_WHIP_ENDPOINT_URL;
+const WHIP_API_KEY = process.env.NEXT_PUBLIC_WHIP_API_KEY;
+const WHEP_ENDPOINT_URL = process.env.NEXT_PUBLIC_WHEP_ENDPOINT_URL;
 
 export function useConfig() {
   const [config, setConfig] = useState<ConfigDTO | null>(null);
 
   useEffect(() => {
-    if (
-      process.env.NEXT_PUBLIC_WHIP_ENDPOINT_URL &&
-      process.env.NEXT_PUBLIC_WHEP_ENDPOINT_URL
-    ) {
-      console.log('Using build env variables');
+    if (WHIP_ENDPOINT_URL && WHEP_ENDPOINT_URL) {
       setConfig({
-        whipEndpointUrl: process.env.NEXT_PUBLIC_WHIP_ENDPOINT_URL,
-        whipApiKey: process.env.NEXT_PUBLIC_WHIP_API_KEY,
-        whepEndpointUrl: process.env.NEXT_PUBLIC_WHEP_ENDPOINT_URL
-      });
-    } else {
-      console.log('Using server env variables');
-      getConfig().then((config) => {
-        setConfig(config);
+        whipEndpointUrl: WHIP_ENDPOINT_URL,
+        whipApiKey: WHIP_API_KEY,
+        whepEndpointUrl: WHEP_ENDPOINT_URL
       });
     }
   }, []);

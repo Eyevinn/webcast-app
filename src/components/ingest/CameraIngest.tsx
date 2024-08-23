@@ -41,7 +41,7 @@ export default function CameraIngest({ whipEndpointUrl, authkey }: Props) {
         .finally(() => {
           console.log('Broadcast started');
           setIsBroadcasting(true);
-          setChannelUrl(`${window.location.origin}/watch/${channelId}`);
+          setChannelUrl(`${window.location.origin}/watch/?id=${channelId}`);
         });
     }
   };
