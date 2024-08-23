@@ -1,0 +1,32 @@
+name: Build and deploy demo application
+on: workflow_dispatch
+
+jobs:
+  deploy-app:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+      - name: Build application
+        run: |
+          npm install
+          npm run build
+        env:
+          NEXT_PUBLIC_WHIP_ENDPOINT_URL: ${{ secrets.WHIP_ENDPOINT_URL }}
+          NEXT_PUBLIC_WHIP_API_KEY: ${{ secrets.WHIP_API_KEY }}
+          NEXT_PUBLIC_WHEP_ENDPOINT_URL: ${{ secrets.WHEP_ENDPOINT_URL }}
+          BUILD_STATIC_ONLY: 'true'
+      - name: deploy to bucket
+        uses: jakejarvis/s3-sync-action@v0.5.1
+        with:
+          args: --follow-symlinks --delete
+        env:
+          AWS_S3_BUCKET: 'origin-webcast'
+          AWS_ACCESS_KEY_ID: ${{ secrets.S3_AWS_ACCESS_KEY_ID  }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.S3_AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: 'eu-north-1'
+          SOURCE_DIR: 'out/'
