@@ -36,7 +36,14 @@ export default function Page() {
             and implements WHIP and WHEP
           </p>
           <p className="text-xs">
-            This demo site is powered by Symphony Media Bridge and{' '}
+            This demo site is powered by{' '}
+            <Link
+              href={
+                'https://symphony.com/insights/blog/introducing-symphonys-media-bridge/'
+              }
+            >
+              Symphony Media Bridge
+            </Link>{' '}
             <Link href={'https://www.osaas.io'}>Open Source Cloud</Link>
           </p>
         </div>

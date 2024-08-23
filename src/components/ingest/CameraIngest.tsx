@@ -1,7 +1,7 @@
 'use client';
 
 import { WHIPClient } from '@eyevinn/whip-web-client';
-import { Button, Input } from '@nextui-org/react';
+import { Button, Input, Snippet } from '@nextui-org/react';
 import { generateSlug } from 'random-word-slugs';
 import { useRef, useState } from 'react';
 
@@ -79,12 +79,11 @@ export default function CameraIngest({ whipEndpointUrl, authkey }: Props) {
           <Button className="mt-3 mb-3" onClick={() => onEndBroadcast()}>
             End Broadcast
           </Button>
-          <Input
-            isReadOnly
-            variant="bordered"
-            defaultValue={channelUrl || ''}
-            label="Share URL"
-          ></Input>
+          {channelUrl && (
+            <Snippet symbol="" variant="bordered">
+              {channelUrl}
+            </Snippet>
+          )}
         </>
       )}
     </div>

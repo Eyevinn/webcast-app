@@ -5,11 +5,15 @@ export function useConfig() {
   const [config, setConfig] = useState<ConfigDTO | null>(null);
 
   useEffect(() => {
-    if (process.env.NEXT_PUBLIC_WHIP_ENDPOINT_URL) {
+    if (
+      process.env.NEXT_PUBLIC_WHIP_ENDPOINT_URL &&
+      process.env.NEXT_PUBLIC_WHEP_ENDPOINT_URL
+    ) {
       console.log('Using build env variables');
       setConfig({
         whipEndpointUrl: process.env.NEXT_PUBLIC_WHIP_ENDPOINT_URL,
-        whipApiKey: process.env.NEXT_PUBLIC_WHIP_API_KEY
+        whipApiKey: process.env.NEXT_PUBLIC_WHIP_API_KEY,
+        whepEndpointUrl: process.env.NEXT_PUBLIC_WHEP_ENDPOINT_URL
       });
     } else {
       console.log('Using server env variables');
