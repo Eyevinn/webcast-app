@@ -33,7 +33,7 @@ export default function WhepPlayer({ whepUrl }: Props) {
       ref={videoRef}
       autoPlay
       playsInline
-      muted
+      controls
     />
   );
 }
