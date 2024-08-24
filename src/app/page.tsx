@@ -43,7 +43,8 @@ export default function Page() {
               }
             >
               Symphony Media Bridge
-            </Link>{' '}
+            </Link>
+            {' and '}
             <Link href={'https://www.osaas.io'}>Open Source Cloud</Link>
           </p>
         </div>
